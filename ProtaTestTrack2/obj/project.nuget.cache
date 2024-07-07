@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GSvTxhjKAA24tPsxXhMgDJwwukP+S1yrzQMJ5R3ODiOwUp1kVW2e88xOkaE6YvLy5ZadovnsRXOEOrJHidZMYg==",
+  "dgSpecHash": "u6NfDJV0WhodigHeJCxy+8+GAc0OAcN9ITJcEbLqVgmIbasPCGdKmCWVvfwoZAcnxPyogkgNdc80bJ3M8ElcFQ==",
   "success": true,
-  "projectFilePath": "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/ProtaTestTrack2.csproj",
+  "projectFilePath": "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/ProtaTestTrack2.csproj",
   "expectedPackageFiles": [
     "/Users/ensarerdeve/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/ensarerdeve/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",

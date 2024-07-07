@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/ProtaTestTrack2.csproj": {}
+    "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/ProtaTestTrack2.csproj": {}
   },
   "projects": {
-    "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/ProtaTestTrack2.csproj": {
+    "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/ProtaTestTrack2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/ProtaTestTrack2.csproj",
+        "projectUniqueName": "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/ProtaTestTrack2.csproj",
         "projectName": "ProtaTestTrack2",
-        "projectPath": "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/ProtaTestTrack2.csproj",
+        "projectPath": "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/ProtaTestTrack2.csproj",
         "packagesPath": "/Users/ensarerdeve/.nuget/packages/",
-        "outputPath": "/Users/ensarerdeve/Documents/VSC Projects/testtrack/ProtaTestTrack2/obj/",
+        "outputPath": "/Users/ensarerdeve/Documents/VSC Projects/blazor-project/ProtaTestTrack2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ensarerdeve/.nuget/NuGet/NuGet.Config"
