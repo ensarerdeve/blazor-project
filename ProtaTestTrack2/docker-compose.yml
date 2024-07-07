@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  prota-mongo:
+    image: mongo:latest
+    container_name: prota-mongo
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: mongoadmin
+    volumes:
+      - mongo-data:/data/db
+
+  webapp:
+    image: protatesttrack2:latest
+    container_name: webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - prota-mongo
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__ProtaTestDB__ConnectionString=mongodb://mongoadmin:mongoadmin@prota-mongo:27017
+      - ConnectionStrings__ProtaTestDB__DatabaseName=ProtaTestDB
+      - ConnectionStrings__ProtaTestDB__CollectionName=TestCollection
+
+volumes:
+  mongo-data:

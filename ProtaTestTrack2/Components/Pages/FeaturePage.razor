@@ -1,0 +1,72 @@
+@page "/featurepage"
+@using ProtaTestTrack2.Helpers
+@using ProtaTestTrack2.Services
+@using MudBlazor
+
+<MudTreeView Items="TreeItems" MultiSelection="false" SelectedValueChanged="FeatureChanged" @bind-ActivatedValue="ActivatedValue" @bind-SelectedValues="SelectedValues" Dense>
+    <ItemTemplate Context="item">
+        <MudTreeViewItem @bind-Expanded="@item.IsExpanded" Items="@item.TreeItems" Value="@item"
+                        Icon="@item.Icon" Text="@item.Title" EndText="@item.Number?.ToString()" EndTextTypo="@Typo.caption">
+            <BodyContent>
+                <MudText Style="justify-self: start;">
+                    <MudHighlighter Text="@context.Text" />
+                </MudText>
+            </BodyContent>
+        </MudTreeViewItem>
+    </ItemTemplate>
+</MudTreeView>
+
+<MudText Style="width: 100%" Typo="@Typo.subtitle2">Selected Feature: @_ActivatedValue?.Title</MudText>
+
+@code {
+
+private int myVar;
+
+public int MyProperty
+{
+    get { return myVar; }
+    set { myVar = value; }
+}
+
+
+[Inject]
+FeatureService featureService { get; set; }
+
+private TreeItemData _ActivatedValue;
+[Parameter]
+public TreeItemData ActivatedValue { get
+    {
+        return _ActivatedValue;
+    } set
+    {
+        _ActivatedValue = value;
+        FeatureChanged.InvokeAsync(value);
+    }
+}
+[Parameter]
+public EventCallback<TreeItemData> FeatureChanged { get; set; }
+
+[Parameter]
+public HashSet<TreeItemData> SelectedValues { get; set; } = new HashSet<TreeItemData>();
+
+private HashSet<TreeItemData> TreeItems { get; set; } = new HashSet<TreeItemData>();
+
+protected override async Task OnInitializedAsync()
+{
+    var pop = await PopulateTree();
+}
+
+public async Task<bool> PopulateTree()
+{
+    //<https://github.com/MudBlazor/MudBlazor/discussions/7899>
+
+    // todo cache this features
+    var features = await featureService.GetAllFeaturesAsync();
+    var treehelper = new Helpers.TreeviewHelper(features);
+    treehelper.BuildTree();
+    TreeItems = treehelper.TreeItems;
+
+    StateHasChanged();
+    return true;
+}
+}
